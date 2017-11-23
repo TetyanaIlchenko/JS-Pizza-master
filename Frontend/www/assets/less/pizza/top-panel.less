@@ -1,0 +1,120 @@
+.top-panel-cont{
+  width: 100%;
+  padding-right: @right_panel_width;
+  position: fixed;
+  top:0;
+  left: 0;
+}
+
+
+
+.top-panel{
+  width:inherit;
+
+  //padding-right: @right_panel_width;
+  height:@top_panel_height;
+  //display:inline-block;
+  background-color: black;
+
+  .top-container{
+    //position:relative;
+    margin:0;
+    padding:0;
+    width:inherit;
+  }
+
+  .site-icon{
+    position:fixed;
+    top:0;
+    width:100px;
+    height:100px;
+
+    color: #fff;
+    background-color: #ea862e;
+    margin-left:15px;
+
+  }
+  .image{
+    position:absolute;
+    transform: rotate(180deg);
+    bottom:-15px;
+    width:100px;
+    height:11px;
+    left:-0.5px;
+  }
+
+
+
+  .title-panel{
+    font-family:Calibri;
+
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+
+
+
+  }
+
+  .img{
+    position:fixed;
+
+  }
+
+  .header-top-row{
+    //position:relative;
+    width:100%;
+    height:50px;
+    padding-left:@pizza_kma_width+20px;
+    padding-top:20px;
+    padding-right: 0 !important;
+
+    .phone-number-title{
+
+      text-align: center;
+
+      color:rgba(124,121,119,0.73);
+      font-size: 20px;
+
+
+    }
+    .time-title{
+
+      text-align: center;
+
+      color:rgba(124,121,119,0.73);
+      font-size: 17px;
+
+    }
+    .delivery-title{
+      text-align: center;
+      color:rgba(124,121,119,0.73);
+      font-size: 17px;
+
+    }
+    .enter-button{
+      width:60px;
+      height:30px;
+      position:absolute;
+      right:0;
+
+
+      background-color: #ea862e;;
+      color:white;
+      border-radius: 8px;
+    }
+  }
+
+  .header-down-row{
+    //position:absolute;
+    width:100%;
+    height:50px;
+    display:block;
+    //top:50px;
+    font-size: 20px;
+    margin-left:10px;
+    color:white;
+    padding-left:@pizza_kma_width+20px;
+  }
+}

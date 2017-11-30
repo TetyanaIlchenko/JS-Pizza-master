@@ -4,10 +4,7 @@
   padding-top: @top_panel_height;
   width: 100%;
   height:100%;
-  .row {
-    //padding-right: @right_panel_width;
 
-  }
   .left-panel {
     margin: 20px;
     padding-left: 30px;
@@ -21,10 +18,10 @@
   .all-pizza-type{
    padding-left:170px;
     padding-bottom:10px;
-  }
 
+  }
   .page-title{
- padding-left:460px;
+    padding-left:460px;
     }
   .main-page{
     width:100%;
@@ -45,22 +42,24 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  //.pizza-card .pizza-small{
-  //  text-align:center;
-  //}
+.pizza-small{
+    text-align:center;
+}
   .h2{
     margin-top: 20px;
     margin-bottom: 10px;
   }
-  //.pizza-card .pizza-big{
-  //  text-align:center;
-  //}
+ .pizza-big{
+    text-align:center;
+   //background-color: #a3a0a0;
+  }
 
-  .pizza-card .row{
+
+ /* .row{
 
     text-align:center;
 
-  }
+  }*/
   .pizza-card .pizza-label-new, .pizza-card .pizza-label-popular {
     position: absolute;
     margin:0;
@@ -72,32 +71,74 @@
     color: #333;
   }
   .buy-small{
-    //margin-left:150px;
+    //margin-left:70px;
     //background-color: #ffa342;
     //color:white;
     //border-radius:5px;
     //margin-bottom: 3px;
-    margin-top:15px;
+    //margin-top:25px;
+    text-align: center;
   }
 
   .buy-big{
-
+    text-align: center;
     //margin-left:30px;
     //background-color: #ffa342;
     //color:white;
     //border-radius:5px;
     //margin-bottom: 3px;
-    margin-top:15px;
+    //margin-top:25px;
   }
+
+  //.pizza-small{
+  //  float: none;
+  //  margin: 0 auto;
+  //}
+  //
+  //.pizza-big{
+  //  float: none;
+  //  margin: 0 auto;
+  //}
   .pizza-count{
     //background-color: #333333;
     position:absolute;
-    margin-left:5px;
+    margin-left:7px;
     background-color: #ff5f2a;
     color:white;
-    border-radius:10px;
-    font-size:16px;
-
+    border-radius:15px;
+    //font-size:20px;
+    margin-top:8px;
+    width:25px;
+    height:25px;
+    text-align:center;
   }
 
+}
+a{
+  font-family:Century;
+}
+.count-title{
+  font-family:Century;
+  font-size:25px;
+
+}
+
+#filter-button-all-pizza{
+  //width:50px;
+  //height:25px;
+  border-radius: 4px;
+  color:white;
+
+//background-color: #ff6f13;
+}
+@media screen and (max-width:500px){
+  .all-pizza-type{
+    width:85%;
+  }
+  .count-title{
+    padding-right: 35px;
+  }
+}
+*{
+  font-family:"Comic Sans MS" ;
 }

@@ -33,13 +33,12 @@ function getIngredientsArray(pizza) {
             <div class="description">
                 <%= getIngredientsArray(pizza).join(", ") %>
             </div>
-            <div class="row">
+            <div class="row ">
                 <% if(pizza.small_size){%>
             <!--<div>-->
-
-            <div class = "col-sm-6 pizza-small">
-            <div>
-            <img class="ui right spaced avatar image" src="assets/images/size-icon.svg">
+                <div	class="<%=	getPizzaColumn(pizza)%> pizza-small">
+                  <div>
+                    <img class="ui right spaced avatar image" src="assets/images/size-icon.svg">
             <span class="diagonal">30</span>
             </div>
             <div>
@@ -52,12 +51,12 @@ function getIngredientsArray(pizza) {
             </div>
             </h2>
 
-                <!--<button class="btn btn-primary buy-small "> Купити </button>-->
+                <a href="#" class="btn btn-warning buy-small" role="button">Купити</a>
 
-            </div>
+                </div>
                 <%}%>
                 <% if(pizza.big_size){%>
-            <div class="col-sm-6 pizza-big">
+                <div	class="<%=	getPizzaColumn(pizza)%> pizza-small">
             <div>
             <img class="ui right spaced avatar image" src="assets/images/size-icon.svg">
             <span class="diagonal">40</span>
@@ -71,28 +70,23 @@ function getIngredientsArray(pizza) {
 
             </div>
             </h2>
-            <!--<a href="#" class="btn btn-warning buy-big" role="button">Купити</a>-->
+
+                <a href="#" class="btn btn-warning buy-big" role="button">Купити</a>
                 <!--<button class="btn btn-primary buy-big "> Купити </button>-->
             </div>
                 <%}%>
             </div>
             </div>
-
-
-
-<!--<div class="caption">-->
-        <!-- Перед тим щоб показати кнопку необхідно переконатися, що піца має великий розмір -->
-        <% if(pizza.big_size){%>
-        <!--<button class="btn btn-primary buy-big "> Купити </button>-->
-        <a href="#" class="btn btn-warning buy-big" role="button">Купити</a>
-        <%}%>
-        <% if(pizza.small_size){%>
-        <a href="#" class="btn btn-warning buy-small" role="button">Купити</a>
-        <!--<button class="btn btn-primary buy-small "> Купити </button>-->
-
-        <%}%>
     </div>
-
-    <!--</div>-->
     </div>
-</div>
+<%
+function getPizzaColumn(pizza)	{
+    if(pizza.big_size&&	pizza.small_size)	{
+        return	"col-sm-6";
+    }	else	{	return	"col-sm-12";}
+}
+%>
+<%	if(pizza.small_size) {
+    var info = pizza.small_size;
+}
+%>

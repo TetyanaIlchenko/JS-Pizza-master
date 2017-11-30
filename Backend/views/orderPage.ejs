@@ -1,0 +1,88 @@
+<% include common/header.ejs %>
+
+    <div class = "top-panel-cont">
+        <div class="top-panel">
+            <div class ="site-icon">
+                <div class = "image"><img src="assets/images/discount.svg"></div>
+                <div class = "title-panel"> PIZZA KMA
+                </div>
+            </div>
+            <div class="row header-top-row">
+                <span class="col-xs-12 col-sm-6 col-md-4 col-lg-3 phone-number-title"> (044) 222 5 222</span>
+                <span class=" col-md-4 col-lg-3 hidden-sm hidden-xs time-title"> 24 години/7 днів на тиждень </span>
+                <span class=" col-lg-4 hidden-md hidden-sm hidden-xs delivery-title"> Безкоштовна доставка піци </span>
+                <div  class=" col-xs-12 col-sm-6 col-md-4 col-lg-2 ">
+                    <button class="enter-button">Ввійти </button>
+                </div>
+            </div>
+            <div class=" row header-down-row">
+                <div class=" col-sm-12 hidden-xs pizza-title" > Піца </div>
+            </div>
+        </div>
+    </div>
+<div class="main-container">
+    <div class="row order-container">
+        <div class="left-p">
+            <div class="user-contacts">
+                <div class="data-contacts">1. Контактні дані </div>
+                <div class="row contacts">
+                    <div class="col-md-7 coloumn">
+                    <form class="form-horizontal">
+                        <div class="form-group name-group">
+                            <label class=" control-label col-sm-2 ">Ім’я</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="text" id="name" placeholder="Прізвище ім’я">
+                            </div>
+                            <span class="unvalid-name" style="display:none">
+                                Введіть тільки власне ім’я, без цифр
+                            </span>
+                            <label class=" control-label col-sm-2 ">Телефон</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="text" id="number" placeholder="+380123456789">
+                            </div>
+                            <span class="unvalid-phone" style="display:none">
+                              Номер телефону розпочинається з +380 або з 0
+                            </span>
+                            <label class=" control-label col-sm-2 ">Адреса</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="text" id="adress" placeholder="м.Київ вул.Спаська,2">
+                            </div>
+                            <span class="unvalid-adress" style="display:none">
+                              Введіть адресу
+                            </span>
+
+                        </div>
+                    </form>
+                </div>
+                    <div class="col-md-5 orders">
+                        <div class="information">
+                            <p class="inf">Інформація про замовлення</p>
+                            <p class="time">
+                            <b>Приблизний час доставки:</b>
+                                невідомо
+                            </p>
+                            <p class="adress">
+                                <b>Адреса доставки:</b>
+                                невідома
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="row button">
+                    <button class="next-button"> Далі ></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% include common/rightPanel.ejs %>
+</div>
+
+
+
+
+<% include common/footer.ejs %>

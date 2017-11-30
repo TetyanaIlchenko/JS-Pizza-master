@@ -102,17 +102,14 @@ function updateCart() {
 
     //Онволення однієї піци
     function showOnePizzaInCart(cart_item) {
-        // $empty.hide();
-        // var x = document.getElementById("empty");
-        // x.style.display = "block";
-        // if (count==0) {
-        //
-        // } else {
-        //
-        // }
-        var html_code = Templates.PizzaCart_OneItem(cart_item);
+      // if(document.href == "http://localhost:5050/") {
+          var html_code = Templates.PizzaCart_OneItem(cart_item);
 
-        // $(".empty").hide();
+      // }
+      // else  {
+      //     var html_code = Templates.PizzaCart_OneOrderItem(cart_item);
+      // }
+      // //   // $(".empty").hide();
 
     count +=1;
     // if(count>0) {
@@ -124,6 +121,9 @@ function updateCart() {
 
         total += cart_item.quantity * cart_item.pizza[cart_item.size].price;
         var $node = $(html_code);
+        $node.find('.button-order').click(function(){
+            var html_code = Templates.PizzaCart_OneItem(cart_item);
+        });
 
         $node.find(".plus").click(function(){
 

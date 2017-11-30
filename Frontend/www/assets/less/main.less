@@ -2,12 +2,14 @@
 @right_panel_width:350px;
 @top_panel_height :100px;
 @pizza_kma_width:100px;
+
 @import "pizza/pizza-card";
 @import "pizza/right-panel";
 @import "pizza/top-panel";
 
 @import "pizza/pizza-list";
 @import "pizza/discount-panel";
+@import "pizza/order";
 footer {
   padding: 40px 0;
   color: grey;
@@ -16,4 +18,13 @@ footer {
   padding-right: 350px !important;
   text-align: center;
   background-color:#e5e5e5;
+
+}
+* body{
+  background-color:rgba(255,234,119,0.19);
+}
+@media screen and(max-width:600px){
+  footer{
+    margin:0;
+  }
 }

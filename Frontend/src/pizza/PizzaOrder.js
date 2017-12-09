@@ -3,7 +3,7 @@ var Storage = require('../../www/Storage');
 var Cart = [];
 
 //HTML елемент куди будуть додаватися піци
-var $cart = $("#cart");
+var $cart = $("#cart_order");
 
 function initialiseOrderCart() {
     //Фукнція віпрацьовуватиме при завантаженні сторінки
@@ -37,7 +37,7 @@ function updateCart() {
     //Онволення однієї піци
     function showOnePizzaInCartOrder(cart_item) {
 
-            var html_code = Templates.PizzaCart_OneOrderItem(cart_item);
+        var html_code = Templates.PizzaCart_OneOrderItem(cart_item);
 
         var $node = $(html_code);
 

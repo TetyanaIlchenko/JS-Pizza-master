@@ -8,10 +8,14 @@ $(function(){
     var PizzaCart = require('./pizza/PizzaCart');
     var Pizza_List = require('./Pizza_List');
     var PizzaOrder = require('./pizza/PizzaOrder');
-
+    var PizzaOrderPage = require('./pizza/PizzaOrderPage');
+    var GoogleMap = require('./GoogleMaps');
+    var LiqPay = require('./LiqPay');
 
     PizzaCart.initialiseCart();
     PizzaMenu.initialiseMenu();
     PizzaOrder.initialiseOrderCart();
+    PizzaOrderPage.initializePage();
+    GoogleMap.initialize();
 
 });

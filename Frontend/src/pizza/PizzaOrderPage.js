@@ -8,10 +8,11 @@ var $unvalid_name = $('.unvalid-name');
 var $unvalid_phone = $('.unvalid-phone');
 var $unvalid_adress= $('.unvalid-adress');
 var $button = $('#next');
+var Storage = require('../../www/Storage');
 var API = require('../API');
 var LiqPay  = require('../GoogleMaps');
 var OrderList =  [];
-//OrderList = Storage.get('pizza');
+OrderList = Storage.get('pizza');
 
   function check(){
     $input_name.bind('input propertychange',function(){
@@ -91,20 +92,30 @@ function sendInf(){
         }
         else{
             console.log("Your order is successful");
-            LiqPay.initLiqPay
+           LiqPay.initLiqPay(res.data,res.signature);
         }
     });
 }
 
+function isEverythingValid(){
+    var name = $input_name.val();
+    var adress = $input_adress.val();
+    var phone = $input_phone.val();
+    if(name === "")return false;
+    if(adress === "" ) return false;
+    if(phone ==="" || isNumber(phone)===false)return false;
+    else return true;
+
+}
 
 function initializePage(){
-
   check();
-  $button.click(function(){
-   // API.createOrder()
+  if(isEverythingValid()===true) {
+      $button.click(function () {
+        sendInf();
 
-  });
-
+      });
+  }
 }
 
 exports.initializePage = initializePage;

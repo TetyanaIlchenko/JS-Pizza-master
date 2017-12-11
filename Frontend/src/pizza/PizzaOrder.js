@@ -30,9 +30,9 @@ function updateCart() {
      $cart.html("");
 
 
-    if (Cart.length === 0) {
-        $cart.append(empty_cart);
-    }
+    //if (Cart.length === 0) {
+      //  $cart.append(empty_cart);
+    //}
 
     //Онволення однієї піци
     function showOnePizzaInCartOrder(cart_item) {

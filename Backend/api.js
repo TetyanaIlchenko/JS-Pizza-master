@@ -11,17 +11,18 @@ exports.createOrder = function(req, res) {
     var order_info = req.body;
     console.log("Creating Order", order_info);
 
+    var total = total(order_info.orderList);
 
     var order = {
-        version:	3,
+        version:3,
         public_key:	LIQPAY_PUBLIC_KEY,
         action:	"pay",
-        amount:	568.00,
-        currency:	"UAH",
-        description:	"Опис транзакції",
+        amount:	total,
+        currency:"UAH",
+        description:toString(order_info,total),
         order_id:	Math.random(),
         //!!!Важливо щоб було 1,	бо інакше візьме гроші!!!
-        sandbox:	1
+        sandbox:1
     };
 
     var data = new Buffer(JSON.stringify(order)).toString('base64');
@@ -42,13 +43,16 @@ function shal(string){
 
 function toString(order,total){
     //!!!!!Дописати замовлення
-    return 'Піца: ' +order.name + 'Адреса: '+ order.adress + 'Телефон: ' + order.number +'Замовлення: ' ;
+    return 'Піца: ' +order.name + 'Адреса: '+ order.adress + 'Телефон: ' + order.number +'Замовлення: '+ toStringPizza(order_info.orderList) + 'Сума:'+ total;
 }
 
 
 function total(order_list){
     var total = 0;
-
+    order_list.foEach(function(order){
+        total+= order.pizza[order.size].price*order.quantity;
+    });
+    return total;
 }
 
 function toStringPizza(order_list){

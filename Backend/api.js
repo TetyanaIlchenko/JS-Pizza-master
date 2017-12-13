@@ -15,6 +15,7 @@ exports.createOrder = function(req, res) {
 
     var order = {
         version:3,
+        public_key: 'i75728623858',
         action:	"pay",
         amount:	total,
         currency:"UAH",
@@ -35,7 +36,7 @@ exports.createOrder = function(req, res) {
         signature:signature
     });
 };
-function shal(string){
+function shal(string) {
     var sha1 = crypto.createHash('sha1');
     sha1.update(string);
     return	sha1.digest('base64');
@@ -55,7 +56,7 @@ function totalOrder(order_list){
     return total;
 }
 
-function toStringPizza(order_list){
+function toStringPizza(order_list) {
     var string = '';
     var size = {
         small_size:'[Мала]',

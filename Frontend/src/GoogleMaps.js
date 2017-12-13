@@ -42,8 +42,10 @@ function	initialize()	{
     function time (err,res){
         if(err)
             $time_order.text("невідомий");
+
         else{
-            var computedTime = res.response.routes[0].legs[0].duration.text;
+            console.log(res);
+            var computedTime = res.duration.text;
             $time_order.text(computedTime);
         }
     }

@@ -49,17 +49,6 @@ OrderList = Storage.get('cart');
       });
 
 
-      function isNumber(value){
-         // if(value.substring(0,2)!= '+380') return false;
-              for (i = 0; i <value.length; i++)
-                  if ( value.charAt(i) != '0' && value.charAt(i) != '1' && value.charAt(i) != '2' && value.charAt(i) != '3' && value.charAt(i) != '4' && value.charAt(i) != '5' && value.charAt(i) != '6' && value.charAt(i) != '7' && value.charAt(i) != '8' && value.charAt(i) != '9' && value.charAt(i) != '+')
-                      return false;
-          return true;
-
-       //   for(i =0;i<3;i++)
-
-
-      }
 
       $input_adress.bind('input propertychange',function(){
           var value = $input_adress.val().trim();
@@ -105,19 +94,31 @@ function isEverythingValid(){
     var phone = $input_phone.val();
     if(name === "")return false;
     if(adress === "" ) return false;
-    if(phone ==="" || isNumber(phone)===false)return false;
+    var check = isNumber($input_phone.val());
+    if(phone ==="" ||  check === false)return false;
     else return true;
 
 }
 
 function initializePage(){
   check();
-
-      $button.click(function () {
-          if(isEverythingValid()===true)
+  $button.click(function () {
+          if(isEverythingValid())
         sendInf();
 
       });
+
+}
+
+function isNumber(value){
+    // if(value.substring(0,2)!= '+380') return false;
+    for (i = 0; i <value.length; i++)
+        if ( value.charAt(i) != '0' && value.charAt(i) != '1' && value.charAt(i) != '2' && value.charAt(i) != '3' && value.charAt(i) != '4' && value.charAt(i) != '5' && value.charAt(i) != '6' && value.charAt(i) != '7' && value.charAt(i) != '8' && value.charAt(i) != '9' && value.charAt(i) != '+')
+            return false;
+    return true;
+
+    //   for(i =0;i<3;i++)
+
 
 }
 

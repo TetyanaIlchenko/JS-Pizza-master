@@ -10,9 +10,9 @@ var $unvalid_adress= $('.unvalid-adress');
 var $button = $('#next');
 var Storage = require('../../www/Storage');
 var API = require('../API');
-var LiqPay  = require('../GoogleMaps');
+var LiqPay  = require('../LiqPay');
 var OrderList =  [];
-OrderList = Storage.get('pizza');
+OrderList = Storage.get('cart');
 
   function check(){
     $input_name.bind('input propertychange',function(){
@@ -88,10 +88,12 @@ function sendInf(){
     };
     API.createOrder(information,function(err,res){
         if(err){
-            allert("Order failed");
+            alert("Order failed");
         }
         else{
             console.log("Your order is successful");
+            console.log(res.data);
+            console.log(res.signature);
            LiqPay.initLiqPay(res.data,res.signature);
         }
     });
@@ -110,12 +112,13 @@ function isEverythingValid(){
 
 function initializePage(){
   check();
-  if(isEverythingValid()===true) {
+
       $button.click(function () {
+          if(isEverythingValid()===true)
         sendInf();
 
       });
-  }
+
 }
 
 exports.initializePage = initializePage;

@@ -17,6 +17,6 @@ $(function(){
     PizzaOrder.initialiseOrderCart();
     PizzaOrderPage.initializePage();
     GoogleMap.initialize();
-    LiqPay.initLiqPay();
+    //LiqPay.initLiqPay();
 
 });

@@ -1,7 +1,5 @@
 <% include common/header.ejs %>
 
-            <div class="row header-top-row">
-                <span class=" col-md-4 col-lg-3 hidden-sm hidden-xs time-title"> 24 години/7 днів на тиждень </span>
 
 <div class="main-container">
     <div class="row order-container">
@@ -45,12 +43,12 @@
                         <div class="information">
                             <p class="inf">Інформація про замовлення</p>
                             <p class="time">
-                            <b>Приблизний час доставки:</b>
-                                невідомо
+                            <b >Приблизний час доставки:</b>
+                            <span id = "time">невідомо</span>
                             </p>
-                            <p class="adress">
+                            <p class="adress" >
                                 <b>Адреса доставки:</b>
-                                невідома
+                               <span id = "adress-order">невідома</span>
                             </p>
                         </div>
                     </div>
@@ -68,7 +66,7 @@
 
     <div  class = "googleMap" id="map"></div>
 
-    <div	id="liqpay"></div>
+    <div id="liqpay"></div>
 
 
 </div>
@@ -102,6 +100,6 @@
 <% include common/rightPanel.ejs %>
 
 
-
+<script	src="//static.liqpay.com/libjs/checkout.js"></script>
 
 <% include common/footer.ejs %>

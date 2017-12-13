@@ -11,11 +11,10 @@ exports.createOrder = function(req, res) {
     var order_info = req.body;
     console.log("Creating Order", order_info);
 
-    var total = total(order_info.orderList);
+    var total = totalOrder(order_info.orderList);
 
     var order = {
         version:3,
-        public_key:	LIQPAY_PUBLIC_KEY,
         action:	"pay",
         amount:	total,
         currency:"UAH",
@@ -26,13 +25,14 @@ exports.createOrder = function(req, res) {
     };
 
     var data = new Buffer(JSON.stringify(order)).toString('base64');
-    var signature =	shal(LIQPAY_PRIVATE_KEY	+ data	+ LIQPAY_PRIVATE_KEY);
-
+    console.log(data);
+    var signature =	shal('zpAw782vAo6rOpYZ3mOxBVBh3CpOGELgXxYK2rPn'	+ data	+ 'zpAw782vAo6rOpYZ3mOxBVBh3CpOGELgXxYK2rPn');
+    console.log(signature);
 
     res.send({
         // success: true
         data:data,
-        sinature:signature
+        signature:signature
     });
 };
 function shal(string){
@@ -43,13 +43,13 @@ function shal(string){
 
 function toString(order,total){
     //!!!!!Дописати замовлення
-    return 'Піца: ' +order.name + 'Адреса: '+ order.adress + 'Телефон: ' + order.number +'Замовлення: '+ toStringPizza(order_info.orderList) + 'Сума:'+ total;
+    return 'Ім’я: ' + order.name + ' Адреса: '+ order.adress + ' Телефон: ' + order.number +' Замовлення: '+ toStringPizza(order.orderList) + ' Сума:'+ total;
 }
 
 
-function total(order_list){
+function totalOrder(order_list){
     var total = 0;
-    order_list.foEach(function(order){
+    order_list.forEach(function(order){
         total+= order.pizza[order.size].price*order.quantity;
     });
     return total;
